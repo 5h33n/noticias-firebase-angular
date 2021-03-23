@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   country = "us";
   category = "";
   loading = true;
+  currentNews = new News();
   constructor(private newsService:NewsService) { }
 
   ngOnInit(): void {
@@ -38,5 +39,8 @@ export class HomeComponent implements OnInit {
       console.log(error);
       this.loading = false;
     });
+  }
+  select(i:number){
+    this.currentNews = this.news[i];
   }
 }
