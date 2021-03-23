@@ -11,6 +11,8 @@ import { TruncatePipe } from '../pipes/truncate.pipe'
 export class HomeComponent implements OnInit {
   news: News[] = new Array<News>();
   country = "us";
+  category = "";
+  loading = true;
   constructor(private newsService:NewsService) { }
 
   ngOnInit(): void {
@@ -20,14 +22,21 @@ export class HomeComponent implements OnInit {
     this.country = e.target.value;
     this.refreshNews();
   }
+  changeCategory(e: any) {
+    this.category = e.target.value;
+    this.refreshNews();
+  }
   refreshNews(){
-    this.newsService.getNews(this.country,"").subscribe((response)=>{
+    this.loading = true;
+    this.newsService.getNews(this.country,this.category).subscribe((response)=>{
       if(response.status==="ok"){
         this.news = response.articles as Array<News>;
         console.log(this.news);
       }
+      this.loading = false;
     },(error)=>{
       console.log(error);
+      this.loading = false;
     });
   }
 }
