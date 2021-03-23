@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "noticias-angular-3746f": {
+      "hosting": {
+        "noticias": [
+          "noticias-angular-3746f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "noticias-angular-3746f"
+  }
+}

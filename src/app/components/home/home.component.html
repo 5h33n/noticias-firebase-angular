@@ -1,0 +1,30 @@
+<div class="filters">
+    <select class="form-select" aria-label="Default select example" (change)="changeCountry($event)">
+        <option value="US" selected>USA</option>
+        <option value="AE">Emiratos Árabes Unidos</option>
+        <option value="AR">Argentina</option>
+        <option value="AT">Austria</option>
+        <option value="AU">Australia</option>
+        <option value="BE">Bélgica</option>
+        <option value="BG">Bulgaria</option>
+    </select>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Todo</option>
+      </select>
+</div>
+<div class="grid" *ngIf="news.length>0">
+    <div class="card" *ngFor="let item of news">
+        <img class="card-img-top" [src]="item.urlToImage? item.urlToImage : '../../../assets/img/notimage.png'" alt="Card image cap">
+        <div class="card-body">
+          <h6 class="card-title">{{ item.title! | truncate: 7 }}</h6>
+          <p class="sub-title">Publicado: {{ item.publishedAt | date: 'short' }}</p>
+          <p class="card-text">{{ item.description! | truncate: 20 }}</p>
+        </div>
+    </div>
+</div>
+<div class="loader">
+</div>
+<div class="none" *ngIf="news.length==0">
+    <img src="../../../assets/img/nodata.svg" alt="">
+    <h2>No pudimos cargar los datos ¿Nos perdonas? :(</h2>
+</div>

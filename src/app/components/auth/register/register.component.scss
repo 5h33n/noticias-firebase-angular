@@ -1,0 +1,11 @@
+@media (max-width: 755px) {
+   .just-panel{
+       margin-top:10% !important;
+   }
+   .content .container .row{
+        flex-flow: column-reverse;
+    }
+    .content .container .row .contents{
+        z-index: 999;
+    }
+}

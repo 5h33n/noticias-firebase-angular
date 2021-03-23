@@ -1,0 +1,42 @@
+.filters{
+    margin: auto 150px;
+    padding-top: 5%;
+}
+.filters select{
+    width: 200px;
+    height: 50px;
+    border: 2px solid #999999;
+    margin-right: 20px;
+    border-radius: 4px;
+    color: #999999;
+}
+.grid {
+    margin: auto 150px;
+    display: grid;
+    padding-bottom: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 3rem;
+    padding-top: 5%;
+    > div {
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+        transition: all .5s ease-out;
+      img {
+        width: 100%;
+        grid-area: 1 / 1 / 2 / 2;
+      }
+    }
+    .card:hover{
+        box-shadow: 0px 0px 8px 1px rgb(0 25 31 / 70%);
+    }
+  }
+.none img{
+    width: 35%;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}
+.none h2{
+    position: absolute;
+    top: 85%;
+    left: 36%;
+}

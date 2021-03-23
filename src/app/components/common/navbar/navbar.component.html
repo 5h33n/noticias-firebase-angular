@@ -1,0 +1,28 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light navbar-fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../assets/img/woolworth.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="titulo">
+            Noticias
+        </div>
+        <div class="user nav-item dropdown" *ngIf="user$ | async as user;else ElseCase">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <p class="explicitMail"> {{ user.email }} </p>
+              <div class="user-img">
+                  <img src="../../../../assets/img/user.png" alt="">
+              </div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Cerrar sesión</a>
+            </div>
+        </div>
+        <ng-template #ElseCase>
+            <div class="enlaces">
+                <a href="javascript:void(0)" [routerLink]="['/login']" >Ingresar</a> | 
+                <a href="javascript:void(0)" [routerLink]="['/register']" >Registrarme</a>
+            </div>
+        </ng-template>
+    </div>
+</nav>

@@ -1,0 +1,54 @@
+<div class="content" (click) = "sticky= !sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="../../../../assets/img/fondo.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center" [class.sticky-panel]="sticky" [class.just-panel]="!sticky">
+            <div class="col-md-8" (click)="sticky= false">
+              <div class="mb-4">
+              <h3>Ingresar</h3>
+              <p class="mb-4">Necesitamos saber quién eres, ingresa tus datos de sesión para acceder al contenido:</p>
+            </div>
+            <form [formGroup]="loginForm">
+                <div class="form-group first" [class.invalidInput]="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+                    <input type="email" class="form-control" formControlName="email" id="email" required>
+                    <label for="email" [class.notValid]="loginForm.controls.email.touched && loginForm.controls.email.invalid" [class.invalidInput]="loginForm.controls.email.touched && loginForm.controls.email.invalid">Correo electrónico </label>
+                  </div>
+                  <div class="form-group first" [class.invalidInput]="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+                    <input type="password" class="form-control" formControlName="password" id="password" required>
+                    <label for="password" [class.invalidInput]="loginForm.controls.password.touched && loginForm.controls.password.invalid">Contraseña</label>
+                    
+                  </div>
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Recordarme</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="#" class="forgot-pass">Olvidé mi contraseña</a></span> 
+              </div>
+              <input type="submit" (click)="submit()" value="Ingresar" class="btn btn-block btn-primary">
+
+              <span class="d-block text-center my-4 text-muted">&mdash; O ingresa con &mdash; <div class="social-login">
+                <a href="#" class="facebook">
+                  <span class="icon-facebook mr-3"></span> 
+                </a>
+                <a href="#" class="twitter">
+                  <span class="icon-twitter mr-3"></span> 
+                </a>
+                <a href="#" class="google">
+                  <span class="icon-google mr-3"></span> 
+                </a>
+              </div></span>
+              
+              <span class="ml-auto">¿No tienes una cuenta?<a [routerLink]="['/register']" routerLinkActive="router-link-active"  class="forgot-pass" style="font-size: inherit;"> Regístrate aquí</a></span>
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 15%);
+    width: 100%;
+    position: fixed;
+    z-index: 999999;
+}
+nav .container a img{
+    width: 158px;
+    height: 70px;
+}
+nav .container{
+    padding: 0;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0;
+}
+nav .container .titulo{
+    font-size: 26px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0c3c4a;
+}
+nav .user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0c3c4a;
+}
+nav .user-img img{
+    width: 40px !important;
+    height: 40px !important;
+    filter: invert(100%);
+}
+.user a{
+    display: flex;
+}
+.user a p{
+    margin-top: 9px;
+    margin-right: 10px;
+}
+.user a::after{
+    display: none;
+}
+@media (max-width: 755px) {
+    nav .container .titulo{
+        display: none;
+    }
+    .explicitMail{
+        display: none;
+    }
+
+ }
