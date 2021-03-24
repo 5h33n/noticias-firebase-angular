@@ -40,4 +40,14 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+  notYet(){
+    Swal.fire({
+      title: 'Esa función todavía no está disponible :(',
+      text: 'Todavía no desarrollamos esa funcionalidad, ten paciencia, trabajamos a marchas forzadas.',
+      imageUrl: '../../../../assets/img/standby.gif',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'prdn',
+    })
+  }
 }
